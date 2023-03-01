@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
 
 repositories {
+    google()
     mavenLocal()
     jcenter()
     maven {
@@ -40,6 +41,7 @@ android {
 buildscript {
     if (project == rootProject) {
         repositories {
+            google()
             jcenter()
         }
         dependencies {
@@ -53,6 +55,7 @@ buildscript {
 
 allprojects {
     repositories {
+        google()
         jcenter()
     }
 }
