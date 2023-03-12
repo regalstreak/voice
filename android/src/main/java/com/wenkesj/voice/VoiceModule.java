@@ -342,13 +342,17 @@ public class VoiceModule extends ReactContextBaseJavaModule implements Recogniti
 
   @Override
   public void onResults(Bundle results) {
+    if (results.isEmpty()) {
+      return;
+    }
+
     WritableArray arr = Arguments.createArray();
 
     ArrayList<String> matches = results.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
+
     for (String result : matches) {
       arr.pushString(result);
     }
-
     WritableMap event = Arguments.createMap();
     event.putArray("value", arr);
     sendEvent("onSpeechResults", event);
