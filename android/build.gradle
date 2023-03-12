@@ -12,6 +12,7 @@ repositories {
         // For developing the example app.
         url "$projectDir/../../react-native/android"
     }
+    google()
 }
 
 def DEFAULT_COMPILE_SDK_VERSION = 28
@@ -40,6 +41,7 @@ android {
 buildscript {
     if (project == rootProject) {
         repositories {
+            google()
             jcenter()
         }
         dependencies {
@@ -53,6 +55,7 @@ buildscript {
 
 allprojects {
     repositories {
+        google()
         jcenter()
     }
 }
